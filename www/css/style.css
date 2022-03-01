@@ -1,0 +1,14 @@
+.riskuj .questionbutton{
+    width: 100%;
+    margin: 10px;
+    height: 100px;
+    padding: initial;
+    font-size: 2rem;
+}
+.form-control-feedback.own{
+    /*display: none;*/
+}
+
+#frm-setPointsForm .form-group:first-child label{
+    color: red;
+}

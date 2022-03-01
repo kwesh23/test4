@@ -1,0 +1,13 @@
+{block content}
+<div class="container">
+{control registrationForm}
+</div>
+
+<script>
+    $( document ).ready(function() {
+        $('[name="pocetTymu"]' ).change(function() {
+            console.log($(this).val());
+
+        });
+    });
+</script>

@@ -1,0 +1,182 @@
+{block content}
+<body>
+
+<!-- ======= Header ======= -->
+
+<header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <h1><a scrollto href="#hero">Herakleidy</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="../assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Domu</a></li>
+                <li><a class="nav-link scrollto " href="#info">Informace</a></li>
+                <li><a class="nav-link scrollto" href="#prihlaska">Přihláška</a></li>
+                <li><a class="nav-link scrollto" href="#ucastnici">Účastníci</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    {*    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">*}
+    <div>
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <div class="carousel-container">
+                <h2 class="animate__animated animate__fadeInDown">5. Herakleidy <span>2022</span></h2>
+                <p class="animate__animated fanimate__adeInUp">Zveme vás na 5. Herakleidy. </p>
+                <a href="#prihlaska" class="btn-get-started animate__animated animate__fadeInUp scrollto">Přihlaš se</a>
+            </div>
+        </div>
+
+
+    </div>
+</section><!-- End Hero -->
+
+<main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section id="info" class="info">
+        <div class="container contact about">
+
+            <div class="section-title" data-aos="zoom-out">
+                <h2>&nbsp;</h2>
+                <p>Informace</p>
+            </div>
+            <div class="row content" data-aos="fade-up">
+                <ul>
+                    <li><i class="ri-checkbox-blank-circle-line"></i> Herakleidy se konají 29.4.2022.
+                    </li>
+                    <li><i class="ri-checkbox-blank-circle-line"></i> Nepotřebuješ žádné speciální znalosti, jen hrát v
+                        duchu fair-play s nasazením a bez internetu.
+                    </li>
+                    <li><i class="ri-checkbox-blank-circle-line"></i> Jídlo a pití není třeba řešit, akce se bude konat
+                        restauraci.
+                    </li>
+                </ul>
+            </div>
+
+    </section>
+    <section id="prihlaska" class="prihlaska">
+        <div class="container contact">
+
+            <div class="section-title" data-aos="zoom-out">
+                <h2>&nbsp;</h2>
+                <p>Přihláška</p>
+            </div>
+
+            <div class="mt-2">
+                <div n:foreach="$flashes as $flash"  n:class="flash,  'alert alert-' . $flash->type "
+                        role="alert">{$flash->message}</div>
+            </div>
+            {form registrationForm}
+                <div class="row">
+                    <div class="col-lg-12 mt-5 mt-md-0 mt-lg-0" data-aos="fade-left">
+                        <div class="form-group mt-3">
+                            {input name}
+                        </div>
+                        <div class="form-group mt-3">
+                            {input surname}
+                        </div>
+                        <div class="form-group mt-3">
+                            {input email}
+                        </div>
+                        <div class="form-group mt-3">
+                            {input tel}
+                        </div>
+                        <div class="form-group mt-3">
+                            {input note}
+                        </div>
+                        <div class="form-group mt-3 ">
+                            {input displayName}
+                        </div>
+                        <div class="form-group mt-3 ">
+                            {input agreement}
+                        </div>
+                        <div  class="form-group mt-3"><div id="html_element"></div></div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center">
+                            {input send}
+
+                        </div>
+                    </div>
+                </div>
+            {/form}
+        </div>
+
+        </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+    <!-- ======= About Section ======= -->
+    <section id="ucastnici" class="ucastnici">
+        <div class="container about">
+
+            <div class="section-title" data-aos="zoom-out">
+                <h2>&nbsp;</h2>
+                <p>přihlášení účastníci</p>
+            </div>
+
+            <div class="row content" data-aos="fade-up">
+                <div class="col-lg-12">
+                    <ul>
+                        {foreach $ucastnici as $ucastnik}
+                            <li>
+                                <i class="ri-check-line {if $ucastnik->potvrzen == 0}gray{/if}"></i> {$ucastnik->name} {$ucastnik->surname}
+                                {if $ucastnik->replacement == 1} <span class="index-t">náhradník</span> {/if}
+                            </li>
+                        {/foreach}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="container contact">
+        <h3>Herakleidy</h3>
+        <p>V případě tvých dotazů k Herakleidám se neváhej ozvat na  <a href="mailto:sasa.fuchs@gmail.com">sasa.fuchs@gmail.com</a> </p>
+
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{$basePath}/assets/vendor/aos/aos.js"></script>
+<script src="{$basePath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{$basePath}/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="{$basePath}/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="{$basePath}/assets/vendor/swiper/swiper-bundle.min.js"></script>
+{*<script src="{$basePath}/assets/vendor/php-email-form/validate.js"></script>*}
+<!-- Template Main JS File -->
+<script src="{$basePath}/assets/js/main.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+</script>
+
+</body>

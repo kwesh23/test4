@@ -1,0 +1,25 @@
+{block content}
+<div class="container">
+<table  class="table table-bordered">
+    <tr>
+        <th>týmy/hry</th>
+        {var $i = 0}
+            {var $c = count($gameNames)}
+        {foreach $gameNames as $gameName}
+            {do $i++}
+          <th scope="col" class="{if (($i%2) == 1)}table-info{/if}">{$gameName}</th>
+        {/foreach}
+        <th class="table-warning">celkem</th>
+    </tr>
+        {foreach $teamResults as $line}
+        <tr>
+            {var $i = 0}
+            {var $c = count($line)}
+            {foreach $line as $lin}
+                {do $i++}
+                <td class="{if $c == $i}table-warning{elseif (($i%2) == 0) }table-info{/if}">{$lin}</td>
+            {/foreach}
+        </tr>
+        {/foreach}
+</table>
+</div>

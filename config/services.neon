@@ -1,0 +1,4 @@
+services:
+	- App\Router\RouterFactory::createRouter
+	- App\Presenters\NicePresenter(%config%)
+	- App\Presenters\HomepagePresenter(%config%)

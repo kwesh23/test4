@@ -1,0 +1,1 @@
+CREATE TABLE `test4`.`registrace` ( `id_registrace` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `surname` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `tel` VARCHAR(255) NULL DEFAULT NULL , `note` TEXT NULL DEFAULT NULL , PRIMARY KEY (`id_registrace`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_czech_ci COMMENT = 'registrace herakleidy';
